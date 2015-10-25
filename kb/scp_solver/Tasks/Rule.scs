@@ -1,0 +1,59 @@
+sc_node_struct -> Solve_Pre_Pattern; Solve_Post_Pattern;
+					stat_congruence_triangles;;
+
+Solve_Pre_Pattern = [*
+
+concept_triangle _-> _Triangle_ABC; _Triangle_DEF;;
+concept_segment _-> _Segment_AB; _Segment_BC; _Segment_AC;
+					_Segment_DE; _Segment_EF; _Segment_DF;;
+_Triangle_ABC _=> nrel_side: _Segment_AB; _Segment_BC; _Segment_AC;; 
+_Triangle_DEF _=> nrel_side: _Segment_DE; _Segment_DF; _Segment_EF;;
+
+_con1 _-> _Segment_AB; Segment_DE;;
+_con2 _-> _Segment_BC; _Segment_EF;;
+_con3 _-> _Segment_AC; _Segment_DF;; 
+
+nrel_congruence _-> _con1; _con2; _con3;;
+*];;
+
+Solve_Post_Pattern = [*
+_con4 _-> _Triangle_ABC; _Triangle_DEF;;
+nrel_congruence _-> _con4;;
+*];;
+
+stat_congruence_triangles <- nrel_congruence;;
+stat_congruence_triangles -> rrel_if: Solve_Pre_Pattern;;
+stat_congruence_triangles -> rrel_then: Solve_Post_Pattern;;
+atomic_existence -> Solve_Pre_Pattern; Solve_Post_Pattern;;
+
+nrel_comment <- sc_node_norole_relation;;
+
+nrel_comment => nrel_main_idtf: [комментарий*] (* <- lang_ru;; *);;
+
+nrel_identification <- sc_node_norole_relation;;
+
+nrel_identification => nrel_main_idtf: [идентификация*] (* <- lang_ru;; *);;
+
+nrel_value <- sc_node_norole_relation;;
+
+nrel_value => nrel_main_idtf: [значение*] (* <- lang_ru;; *);;
+
+question_finding_value <- sc_node_not_relation;;
+
+question_finding_value => nrel_main_idtf: [Вопросная конструкция, соответствующая поиску значения неизвестной величины] (* <- lang_ru;; *);;
+
+concept_condition_struct <- sc_node_not_relation;;
+
+concept_condition_struct => nrel_main_idtf: [контур доказательства] (* <- lang_ru;; *);;
+
+concept_quantity <- sc_node_not_relation;;
+
+concept_quantity => nrel_main_idtf: [величина] (* <- lang_ru;; *);;
+
+rrel_decimal <- sc_node_role_relation;;
+
+rrel_decimal => nrel_main_idtf: [десятичное число'] (* <- lang_ru;; *);;
+
+rrel_sm <- sc_node_role_relation;;
+
+rrel_sm => nrel_main_idtf: [сантиметр'] (* <- lang_ru;; *);;

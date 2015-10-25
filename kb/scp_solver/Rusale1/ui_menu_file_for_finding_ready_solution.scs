@@ -1,0 +1,16 @@
+ui_menu_file_for_finding_ready_solution <- ui_user_command_class_atom;
+
+=> nrel_main_idtf: [Поиск аналогии] (* <- lang_ru;; *);
+=> nrel_main_idtf: [Finding analogy] (* <- lang_en;; *);;
+ui_menu_file_for_finding_ready_solution => ui_nrel_command_template:
+	[*
+		question_analogy _-> ._question_analogy_instance
+			(*
+			_-> ui_arg_1;;
+			*);;
+		._question_analogy_instance _<- question;;
+	*];;
+
+ui_menu_file_for_finding_ready_solution => ui_nrel_command_lang_template: [Поиск аналогии: $ui_arg_1] (* <- lang_ru;; *);;
+ui_menu_file_for_finding_ready_solution => ui_nrel_command_lang_template: [Finding analogy: $ui_arg_1] (* <- lang_en;; *);;
+

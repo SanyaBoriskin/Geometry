@@ -1,0 +1,19 @@
+concept_triangle -> Triangle_ABC; Triangle_DEF;;
+concept_quantity -> Param_Per;;
+
+Triangle_ABC => nrel_perimeter: Param_Per;; 
+Triangle_DEF => nrel_perimeter: Param_Per_base;;
+Param_Per_base <= nrel_value: ...
+		(*
+		->rrel_sm: ...
+		(*
+		<-number;;
+		<=nrel_identification: ...
+		(*
+		->rrel_decimal:[5];;
+		*);;
+		*);;
+		*);;
+
+con -> Triangle_ABC; Triangle_DEF;;
+nrel_congruence -> con;;

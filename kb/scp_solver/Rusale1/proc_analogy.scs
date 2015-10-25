@@ -1,0 +1,714 @@
+scp_program -> proc_analogy_task (*	
+	-> rrel_params: .proc_analogy_task_params (*
+		-> rrel_1: rrel_in: _param;;
+		-> rrel_2: rrel_in: _answer;;
+	*);;
+	
+	-> rrel_operators: .proc_analogy_task_operator_set (*
+
+		-> rrel_init: .proc_analogy_task_operator_1B (*
+			<-printNl;;
+			->rrel_1: rrel_fixed: rrel_scp_const: [Privet, I v analogii];;
+			=>nrel_goto: .proc_analogy_task_operator_1A;;
+			*);; 
+
+		-> .proc_analogy_task_operator_1A (*
+		  <- searchSetStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc1;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: _relation;;
+
+		-> rrel_set_1: rrel_assign: rrel_scp_var: _figures;; 
+
+		  => nrel_then: .proc_analogy_task_operator_2A1;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		*);;
+
+		-> .proc_analogy_task_operator_1B1 (*
+		  <- searchSetStr3;;
+
+		  -> rrel_1: rrel_assign: rrel_scp_var: _cord;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _figure;;
+		  
+              -> rrel_set_1: rrel_assign: rrel_scp_var: _cords;; 
+				
+		  => nrel_then: .proc_analogy_task_operator_2A1;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		  		*);;
+
+		-> .proc_analogy_task_operator_2A1 (*
+		<-printEl;;
+		->rrel_1: rrel_fixed: rrel_scp_var: _figures;;
+		
+		=> nrel_goto: .proc_analogy_task_operatorMMM;;
+		*);;
+		
+		-> .proc_analogy_task_operator_2A1_1 (*
+		  <- searchElStr3;;
+
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _cords;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc31;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _cord;;
+				
+		  => nrel_then: .proc_analogy_task_operator_2A2;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		  		*);;
+
+		-> .proc_analogy_task_operator_2A2 (*
+		  <- eraseEl;;
+
+		  -> rrel_1: rrel_erase: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc31;;
+				
+		  => nrel_goto: .proc_analogy_task_operator_2A;;
+		  		*);;
+		
+		  
+		  -> .proc_analogy_task_operator_2A (*
+		  <- searchElStr3;;
+
+		  -> rrel_1: rrel_fixed: rrel_scp_const: nrel_congruence;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _cord;;
+				
+		  => nrel_then: .proc_analogy_task_operator_2B;;
+		  => nrel_else: .proc_analogy_task_operator_3A;;
+		  		*);;		
+		
+			-> .proc_analogy_task_operator_2B (*
+		  <- searchSetStr3;;
+
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _cord;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+
+		-> rrel_set_3: rrel_assign: rrel_scp_var: _set_for_base_fig;;	
+	
+		  => nrel_then: .proc_analogy_task_operator_2C1;;
+		  => nrel_else: .proc_analogy_task_operator_2A1;;
+		  		*);;
+
+		-> .proc_analogy_task_operator_2C1 (*
+		  <- searchElStr3;;
+
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _set_for_base_fig;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc51;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+
+	
+		  => nrel_then: .proc_analogy_task_operator_2C2;;
+		  => nrel_else: .proc_analogy_task_operator_2A1;;
+		  		*);;
+
+		-> .proc_analogy_task_operator_2C2 (*
+		  <- eraseEl;;
+
+		  -> rrel_1: rrel_erase: rrel_fixed: rrel_pos_const_perm: rrel_scp_var: _arc51;;
+				
+		  => nrel_goto: .proc_analogy_task_operator_2C;;
+		  		*);;
+
+				
+		-> .proc_analogy_task_operator_2C (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _base_figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc6;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  -> rrel_5: rrel_fixed: rrel_scp_var: _relation;;
+
+		  => nrel_then: .proc_analogy_task_operator_2D;;
+		  => nrel_else: .proc_analogy_task_operator_2C1;;
+		*);;
+		
+		-> .proc_analogy_task_operator_2D (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc8;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc9;;
+		  -> rrel_5: rrel_fixed: rrel_scp_var: nrel_value;;
+
+		  => nrel_then: .proc_analogy_task_operator_2E;;
+		  => nrel_else: .proc_analogy_task_operator_2C1;;
+		*);;
+		
+		 ->.proc_analogy_task_operator_2E (*
+		  <- genElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc10;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_value;;
+
+		  => nrel_goto: .proc_analogy_task_operator_FINISH;;
+		*);; 
+		
+		-> .proc_analogy_task_operator_3A (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: _relation;;
+
+		  => nrel_then: .proc_analogy_task_operator_3coeff;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3coeff (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_common: rrel_scp_var: _arc4;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc16;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _number;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc17;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_coefficient_of_similarity;;
+
+		  => nrel_then: .proc_analogy_task_operator_3coeff_id;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3coeff_id (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _num;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc19;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _number;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc20;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_identification;;
+
+		  => nrel_then: .proc_analogy_task_operator_3coeff_link;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3coeff_link (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _num;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc21;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _coeff;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc22;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: rrel_decimal;;
+
+		  => nrel_then: .proc_analogy_task_operator_3A1;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		
+		-> .proc_analogy_task_operator_3A1 (*
+		  <- searchSetStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc1;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc10;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_length;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_1;;
+		  => nrel_else: .proc_analogy_task_operator_3B;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3B (*
+		  <- searchSetStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc1;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_perimeter;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_4;;
+		  => nrel_else: .proc_analogy_task_operator_3C;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3C (*
+		  <- searchSetStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc1;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc12;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_angle_measure;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_3;;
+		  => nrel_else: .proc_analogy_task_operator_3D;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3D (*
+		  <- searchSetStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc1;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc13;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_area;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_4;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+
+		-> .proc_analogy_task_operator_3_1 (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_similarity;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_1A;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_1A (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc14;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: nrel_value;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_1B;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_1B (*
+		<-genEl;;
+		->rrel_1:rrel_assign:rrel_const: rrel_node: rrel_scp_var: _razm;;
+		=> nrel_goto: .proc_analogy_task_operator_3_1C;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_1C (*
+		<-genEl;;
+		->rrel_1:rrel_assign:rrel_const: rrel_node: rrel_scp_var: _ssilk;;
+		=> nrel_goto: .proc_analogy_task_operator_3_1D;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_1D (*
+		  <- call;;
+		  -> rrel_1: rrel_fixed: rrel_scp_const: proc_getting_value;;
+		  -> rrel_2: rrel_fixed: rrel_scp_const: .proc_analogy_task_operator_3_1D_params (*
+		  
+			-> rrel_1: rrel_in: _param;;
+			-> rrel_2: rrel_in: _razm;;
+			-> rrel_3: rrel_in: _ssilk;; 
+			*);;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _descr2;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_1E;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_1E (*
+		  <- waitReturn;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _descr2;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_1F;;
+		*);; 
+		
+		->.proc_analogy_task_operator_3_1F (*
+		<-searchElStr3;;
+		->rrel_1: rrel_assign: rrel_scp_var: _ssilk;;
+		->rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+		->rrel_3: rrel_assign: rrel_scp_var: _node2;;
+		
+		=>nrel_then: .proc_analogy_task_operator_3_1G;;
+		=>nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_1G (*
+		<-contMult;;
+		->rrel_1:rrel_assign: rrel_scp_var: _result_area;;
+		->rrel_2:rrel_fixed:rrel_scp_var: _node2;;
+		->rrel_3:rrel_fixed: rrel_scp_var: _coeff;;
+		
+		=>nrel_goto: .proc_analogy_task_operator_3_1H;;
+		*);;	
+		
+		->.proc_analogy_task_operator_3_1H (* 
+		<-call;;
+		 -> rrel_1: rrel_fixed: rrel_scp_const: proc_generation_multiplication;;
+		  -> rrel_2: rrel_fixed: rrel_scp_const: .proc_analogy_task_operator_3_1H_params (*
+		  
+			-> rrel_1: rrel_in: _param;;
+			-> rrel_2: rrel_in: _razm;;
+			-> rrel_3: rrel_in: _node2;;
+			*);;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _descr1;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_1I;;
+		
+		*);;
+		
+		-> .proc_analogy_task_operator_3_1I (*
+		  <- waitReturn;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _descr1;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_1FINISH;;
+		*);; 
+		
+		-> .proc_analogy_task_operator_3_1FINISH (*
+		<-return;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_2 (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_similarity;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_2A;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_2A (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc14;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: nrel_value;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_2B;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_2B (*
+		<-genEl;;
+		->rrel_1:rrel_assign:rrel_const: rrel_node: rrel_scp_var: _razm;;
+		=> nrel_goto: .proc_analogy_task_operator_3_2C;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_2C (*
+		<-genEl;;
+		->rrel_1:rrel_assign:rrel_const: rrel_node: rrel_scp_var: _ssilk;;
+		=> nrel_goto: .proc_analogy_task_operator_3_2D;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_2D (*
+		  <- call;;
+		  -> rrel_1: rrel_fixed: rrel_scp_const: proc_getting_value;;
+		  -> rrel_2: rrel_fixed: rrel_scp_const: .proc_analogy_task_operator_3_2D_params (*
+		  
+			-> rrel_1: rrel_in: _param;;
+			-> rrel_2: rrel_in: _razm;;
+			-> rrel_3: rrel_in: _ssilk;; 
+			*);;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _descr4;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_2E;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_2E (*
+		  <- waitReturn;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _descr4;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_2F;;
+		*);; 
+		
+		->.proc_analogy_task_operator_3_2F (*
+		<-searchElStr3;;
+		->rrel_1: rrel_assign: rrel_scp_var: _ssilk;;
+		->rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+		->rrel_3: rrel_assign: rrel_scp_var: _node2;;
+		
+		=>nrel_then: .proc_analogy_task_operator_3_2F1;;
+		=>nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_2F1 (*
+		<-contAssign;;
+		->rrel_1: rrel_assign: rrel_scp_var: _number2;;
+		->rrel_2: rrel_assign: rrel_scp_const: [2];;
+		
+		=>nrel_goto: .proc_analogy_task_operator_3_2F2;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_2F2 (*
+		<-contPow;;
+		->rrel_1: rrel_fixed: rrel_scp_var: _coeff1;;
+		->rrel_2: rrel_fixed: rrel_scp_var: _coeff;;
+		->rrel_3: rrel_fixed: rrel_scp_var: _number2;;
+		
+		=>nrel_goto: .proc_analogy_task_operator_3_2G;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_2G (*
+		<-contMult;;
+		->rrel_1:rrel_assign: rrel_scp_var: _result_area;;
+		->rrel_2:rrel_fixed:rrel_scp_var: _node2;;
+		->rrel_3:rrel_fixed: rrel_scp_var: _coeff1;;
+		
+		=>nrel_goto: .proc_analogy_task_operator_3_2H;;
+		*);;	
+		
+		->.proc_analogy_task_operator_3_2H (* 
+		<-call;;
+		 -> rrel_1: rrel_fixed: rrel_scp_const: proc_generation_multiplication;;
+		  -> rrel_2: rrel_fixed: rrel_scp_const: .proc_analogy_task_operator_3_2H_params (*
+		  
+			-> rrel_1: rrel_in: _param;;
+			-> rrel_2: rrel_in: _razm;;
+			-> rrel_3: rrel_in: _node2;;
+			*);;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _descr3;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_2I;;
+		
+		*);;
+		
+		-> .proc_analogy_task_operator_3_2I (*
+		  <- waitReturn;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _descr3;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_2FINISH;;
+		*);; 
+		
+		-> .proc_analogy_task_operator_3_2FINISH (*
+		<-return;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_3 (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_similarity;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_3A;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_3A (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _base_figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc14;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: nrel_angle_measure;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_3B;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_3B (*
+		<-searchElStr5;;
+		->rrel_1: rrel_assign: rrel_scp_var: _node_value;;
+		->rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc25;;
+		->rrel_3: rrel_fixed: rrel_scp_var: _base_param;;
+		->rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc26;;
+		->rrel_5: rrel_assign: rrel_scp_const: nrel_value;;
+		
+		=>nrel_then: .proc_analogy_task_operator_3_3C;;
+		=>nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_3C (*
+		<-genElStr5;;
+		->rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		->rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc27;;
+		->rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		->rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc28;;
+		->rrel_5: rrel_fixed: rrel_scp_const: nrel_value;;
+		
+		=>nrel_then: .proc_analogy_task_operator_3_3FINISH;;
+		=>nrel_else: .proc_analogy_task_operator_4A;;
+		*);;		
+		
+		-> .proc_analogy_task_operator_3_3FINISH (*
+		<-return;;
+		*);;
+
+		-> .proc_analogy_task_operator_3_4 (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_similarity;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_4A;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_4A (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc14;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc15;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: nrel_value;;
+
+		  => nrel_then: .proc_analogy_task_operator_3_4B;;
+		  => nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_4B (*
+		<-genEl;;
+		->rrel_1:rrel_assign:rrel_const: rrel_node: rrel_scp_var: _razm;;
+		=> nrel_goto: .proc_analogy_task_operator_3_4C;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_4C (*
+		<-genEl;;
+		->rrel_1:rrel_assign:rrel_const: rrel_node: rrel_scp_var: _ssilk;;
+		=> nrel_goto: .proc_analogy_task_operator_3_4D;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_4D (*
+		  <- call;;
+		  -> rrel_1: rrel_fixed: rrel_scp_const: proc_getting_value;;
+		  -> rrel_2: rrel_fixed: rrel_scp_const: .proc_analogy_task_operator_3_4D_params (*
+		  
+			-> rrel_1: rrel_in: _param;;
+			-> rrel_2: rrel_in: _razm;;
+			-> rrel_3: rrel_in: _ssilk;; 
+			*);;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _descr7;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_4E;;
+		*);;
+		
+		-> .proc_analogy_task_operator_3_4E (*
+		  <- waitReturn;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _descr7;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_4F;;
+		*);; 
+		
+		->.proc_analogy_task_operator_3_4F (*
+		<-searchElStr3;;
+		->rrel_1: rrel_assign: rrel_scp_var: _ssilk;;
+		->rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc23;;
+		->rrel_3: rrel_assign: rrel_scp_var: _node2;;
+		
+		=>nrel_then: .proc_analogy_task_operator_3_4G;;
+		=>nrel_else: .proc_analogy_task_operator_4A;;
+		*);;
+		
+		->.proc_analogy_task_operator_3_4G (*
+		<-contMult;;
+		->rrel_1:rrel_assign: rrel_scp_var: _result_perimeter;;
+		->rrel_2:rrel_fixed:rrel_scp_var: _node2;;
+		->rrel_3:rrel_fixed: rrel_scp_var: _coeff;;
+		
+		=>nrel_goto: .proc_analogy_task_operator_3_4H;;
+		*);;	
+		
+		->.proc_analogy_task_operator_3_4H (* 
+		<-call;;
+		 -> rrel_1: rrel_fixed: rrel_scp_const: proc_generation_multiplication;;
+		  -> rrel_2: rrel_fixed: rrel_scp_const: .proc_analogy_task_operator_3_2H_params (*
+		  
+			-> rrel_1: rrel_in: _param;;
+			-> rrel_2: rrel_in: _razm;;
+			-> rrel_3: rrel_in: _node2;;
+			*);;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _descr8;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_4I;;
+		
+		*);;
+		
+		-> .proc_analogy_task_operator_3_4I (*
+		  <- waitReturn;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _descr8;;
+
+		  => nrel_goto: .proc_analogy_task_operator_3_4FINISH;;
+		*);; 
+		
+		-> .proc_analogy_task_operator_3_4FINISH (*
+		<-return;;
+		*);;
+
+	-> .proc_analogy_task_operator_4A (*
+	<-printNl;;
+	->rrel_1: rrel_fixed: rrel_scp_const: [Operator 4 govno];;
+	
+	=> nrel_goto: .proc_analogy_task_operator_4A1;;
+*);;
+		
+	-> .proc_analogy_task_operator_4A1 (*
+		  <- searchSetStr5;;
+		  -> rrel_1: rrel_assign: rrel_scp_var: _figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc1;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc13;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_area;;
+		  
+		  => nrel_then: .proc_analogy_task_operator_4B;;
+		  => nrel_else: .proc_analogy_task_operator_2A1;;
+		*);;
+		
+		 -> .proc_analogy_task_operator_4B (*
+		  <- searchElStr3;;
+
+		  -> rrel_1: rrel_fixed: rrel_scp_const: nrel_equal_sized;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _cord;;
+				
+		  => nrel_then: .proc_analogy_task_operator_4C;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		  		*);;		
+		
+			-> .proc_analogy_task_operator_4C (*
+		  <- searchSetStr3;;
+
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _cord;;
+		  -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_figure;;
+				
+		  => nrel_then: .proc_analogy_task_operator_4D;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		  		*);;
+				
+		-> .proc_analogy_task_operator_4D (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _base_figure;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc6;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc7;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_area;;
+
+		  => nrel_then: .proc_analogy_task_operator_4E;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		*);;
+		
+		-> .proc_analogy_task_operator_4E (*
+		  <- searchElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc8;;
+		  -> rrel_3: rrel_assign: rrel_scp_var: _base_param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc9;;
+		  -> rrel_5: rrel_assign: rrel_scp_var: nrel_value;;
+
+		  => nrel_then: .proc_analogy_task_operator_4F;;
+		  => nrel_else: .proc_analogy_task_operator_return;;
+		*);;
+		
+		 ->.proc_analogy_task_operator_4F (*
+		  <- genElStr5;;
+		  -> rrel_1: rrel_fixed: rrel_scp_var: _node_value;;
+		  -> rrel_2: rrel_assign: rrel_common: rrel_scp_var: _arc10;;
+		  -> rrel_3: rrel_fixed: rrel_scp_var: _param;;
+		  -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc11;;
+		  -> rrel_5: rrel_fixed: rrel_scp_const: nrel_value;;
+
+		  => nrel_goto: .proc_analogy_task_operator_FINISH;;
+		*);;
+
+		->.proc_analogy_task_operator_4F (*
+		<-return;;
+		*);;
+
+	-> .proc_analogy_task_operator_FINISH (*
+		<-printNl;;
+		->rrel_1: rrel_fixed: rrel_scp_const: [I zakonchil s 1 analom :-- (|)];;
+
+	 =>nrel_goto:.proc_analogy_task_operator_return;; 
+	*);;
+
+	->.proc_analogy_task_operator_return (*
+	<-return;;
+	*);;
+		
+
+		*);;
+		*);;

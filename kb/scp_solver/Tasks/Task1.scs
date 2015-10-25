@@ -1,0 +1,48 @@
+task_1 -> rrel_1: Task_Pattern;;
+task_1 -> rrel_2: Solve_Pattern;;
+sc_node_struct -> task_1;;
+sc_task -> task_1;;
+
+task_2 -> rrel_1: Task_Pattern;;
+task_2 -> rrel_2: test_quantity2;;
+Solve_Pattern <- concept_condition_struct;;
+sc_node_struct -> task_2;;
+sc_task -> task_2;;
+
+task_3 -> rrel_1: Task_Pattern;;
+task_3 -> rrel_2: test_quantity;;
+sc_node_struct -> task_3;;
+sc_task -> task_3;;
+
+Task_Pattern = [* concept_triangle -> Triangle_ABC; Triangle_DEF;;
+		nrel_congruence -> ... (* -> Triangle_ABC; Triangle_DEF;; *);;
+		concept_segment -> Segment_AB; Segment_BC; Segment_AC; Segment_DE; Segment_EF; Segment_DF;;
+		Triangle_ABC => nrel_side: Segment_AB; Segment_BC; Segment_AC;; 
+		Triangle_DEF => nrel_side: Segment_DE; Segment_DF; Segment_EF;;
+		nrel_congruence -> ... (* -> Segment_AB; Segment_DE;; *);;
+		nrel_congruence -> ... (* -> Segment_AC; Segment_DF;; *);;
+		nrel_congruence -> ... (* -> Segment_BC; Segment_EF;; *);;
+		*];;
+
+Solve_Pattern = [* _con _-> Triangle_ABC; Triangle_DEF;; 
+		nrel_congruence _-> _con;;
+		*];;
+
+concept_triangle <= nrel_main_statements: ... (* -> stat_congruence_triangles;; *);;
+
+sc_node_struct -> Solve_Pattern;;
+
+test_quantity <- concept_quantity;;
+test_quantity2 <- concept_quantity;;
+
+test_quantity <= nrel_value: ... 
+	(* 
+	-> rrel_sm: ...
+		(* 
+		<- number;;
+		<= nrel_identification: ...
+			(* 
+			-> rrel_decimal: [10];;
+			*);;
+		*);;
+	*);;
